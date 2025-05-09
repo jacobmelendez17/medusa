@@ -14,13 +14,7 @@ export default function Header() {
 		<header className="bg-gray-800 px-6 py-4 text-white shadow">
 			<nav className="flex justify-end gap-6">
 				{NavItems.map((item) => (
-					<Link
-						key={item.path}
-						to={item.path}
-						className={`text-lg transition hover:text-yellow-300 ${
-							location.pathname === item.path ? 'text-yellow-300 underline' : ''
-						}`}
-					>
+					<Link key={item.path} to={item.path}>
 						{item.name}
 					</Link>
 				))}
