@@ -1,6 +1,7 @@
 import LessonReviewCard from '../components/LessonReviewCard';
 import ReviewForecast from '../components/ReviewForecast';
 import RecentMistakes from '../components/RecentMistakes';
+import ExtraStudy from '../components/ExtraStudy';
 
 export default function Home() {
 	return (
@@ -13,6 +14,7 @@ export default function Home() {
 						<LessonReviewCard type="review" count={0} />
 					</div>
 					<RecentMistakes />
+					<ExtraStudy />
 				</div>
 
 				{/* right column */}
