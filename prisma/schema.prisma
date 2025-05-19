@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Level {
+  id          Int         @id @default(autoincrement())
+  number      Int         @unique
+  title       String?
+  description String?
+  vocabulary  Vocabulary[]
+}
+
+model Vocabulary {
+  id               Int      @id @default(autoincrement())
+  spanish          String
+  english          String
+  part_of_speech   String
+  difficulty       Int
+  example_sentence String?
+  srs_points       Int      @default(0)
+  wrong_points     Int      @default(0)
+  level_id         Int
+  level            Level    @relation(fields: [level_id], references: [id])
+}
+
